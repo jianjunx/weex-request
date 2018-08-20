@@ -1,11 +1,22 @@
 {
   "name": "weex-request",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "封装weex stream.fetch模块，实现拦截请求和响应",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jefxie/weex-request"
+  },
+  "keywords": [
+    "xhr",
+    "http",
+    "ajax",
+    "promise",
+    "weex"
+  ],
   "author": "Jefxie",
   "license": "MIT"
 }
