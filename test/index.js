@@ -2,6 +2,8 @@ const Koa = require("koa");
 const app = new Koa();
 const bodyParser = require("koa-bodyparser");
 
+// npm i koa koa-bodyparser --save
+
 app.use(bodyParser());
 
 app.use(async ctx => {
