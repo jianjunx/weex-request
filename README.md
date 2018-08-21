@@ -2,6 +2,16 @@
 
 Weex-request 是封装weex中的stream.fetch模块，实现了便捷方法和拦截请求，可以像axios一样使用。
 
+# 安装
+
+```bash
+$ npm install weex-request --save
+```
+
+```javascript
+import weexRequest from "weex-request";
+```
+
 # Example
 
 Performing a `GET` request
@@ -30,7 +40,7 @@ weexRequest(config)
 
 ```javascript
 // Send a POST request
-weexRequest({
+weexRequest.all({
   method: 'post',
   url: '/user/12345',
   data: {
@@ -40,7 +50,7 @@ weexRequest({
 });
 
 // GET request for remote image
-weexRequest({
+weexRequest.all({
   method:'get',
   url:'http://bit.ly/2mTM3nY',
   type:'stream'
@@ -54,7 +64,7 @@ weexRequest({
 
 For convenience aliases have been provided for all supported request methods.
 
-##### weexRequest.request(config)
+##### weexRequest.all(config)
 
 ##### weexRequest.get(url[, config])
 
