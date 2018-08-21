@@ -72,8 +72,6 @@ For convenience aliases have been provided for all supported request methods.
 
 ##### weexRequest.head(url[, config])
 
-##### weexRequest.options(url[, config])
-
 ##### weexRequest.post(url[, data[, config]])
 
 ##### weexRequest.put(url[, data[, config]])

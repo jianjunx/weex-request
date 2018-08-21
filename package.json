@@ -1,6 +1,6 @@
 {
   "name": "weex-request",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "封装weex stream.fetch模块，实现拦截请求和响应",
   "main": "index.js",
   "scripts": {
@@ -18,5 +18,9 @@
     "weex"
   ],
   "author": "Jefxie",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.5.2",
+    "koa-bodyparser": "^4.2.1"
+  }
 }
