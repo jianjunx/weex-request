@@ -40,7 +40,7 @@ weexRequest(config)
 
 ```javascript
 // Send a POST request
-weexRequest.all({
+weexRequest({
   method: 'post',
   url: '/user/12345',
   data: {
@@ -50,10 +50,13 @@ weexRequest.all({
 });
 
 // GET request for remote image
-weexRequest.all({
+weexRequest({
   method:'get',
   url:'http://bit.ly/2mTM3nY',
-  type:'stream'
+  type:'json', // 默认json 响应类型, json,text 或是 jsonp {在原生实现中其实与 json 相同)
+  headers:{
+    'Content-Type': 'application/json'
+  }
 })
   .then(function(response) {
     response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
@@ -105,6 +108,10 @@ weexRequest.default.baseUrl = "https://api.github.com/";
 weexRequest.default.headers = {
     "Content-Type": "application/json"
 };
+// body 格式化方式 json/query
+// 默认设置为json { "name": "wq", "type": "json"}
+// 设置为query  格式化形式为 name=wq&type=json
+weexRequest.default.bodyParse = 'json'; 
 // 拦截请求
 weexRequest.interceptors.request = function(config) {
     console.log("config", config);
