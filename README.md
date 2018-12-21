@@ -1,6 +1,5 @@
 # 简介
-
-Weex-request 是封装weex中的stream.fetch模块，实现了便捷方法和拦截请求，可以像axios一样使用。
+weex请求库，可以像axios一样使用weex的stream.fetch
 
 # 安装
 
@@ -87,7 +86,7 @@ For convenience aliases have been provided for all supported request methods.
 
 ```javascript
 // 设置默认选项
-weexRequest.default.baseUrl = "https://api.github.com/";
+weexRequest.default.baseURL = "https://api.github.com/";
 weexRequest.default.headers = {
     "Content-Type": "application/json"
 };
@@ -104,7 +103,7 @@ You can intercept requests or responses before they are handled by `then` or `ca
 import weexRequest from "weex-request";
 
 // 设置默认选项
-weexRequest.default.baseUrl = "https://api.github.com/";
+weexRequest.default.baseURL = "https://api.github.com/";
 weexRequest.default.headers = {
     "Content-Type": "application/json"
 };

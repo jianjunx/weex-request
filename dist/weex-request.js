@@ -8,7 +8,7 @@
 	/**
 	 * Fetcher类
 	 * Weex-request 是封装weex中的stream.fetch模块，实现了便捷方法和拦截请求，可以像axios一样使用。
-	 * 文档地址: https://github.com/Jefxie/weex-request
+	 * 仓库地址: https://github.com/Jefxie/weex-request
 	 */
 	class Fetcher {
 		constructor() {
@@ -113,13 +113,14 @@
 		// 初始化便捷方法
 		const methodKey = `get,post,delete,put,patch,head`.split(',');
 		for (const key of methodKey) {
-			// 为类添加上便捷方法
+			// 为Ft类添加上get,post,delete,put,patch,head便捷方法
 			Ft.prototype[key] = function(url = '', data, config = {}) {
 				const _opt = Object.assign({
 					method: key.toUpperCase(),
 					url,
 					data
 				}, config);
+				// 这里的this就是man.js中的weexRequest = fetcher.all.bind(fetcher)
 				return this(_opt);
 			};
 		}
@@ -131,10 +132,10 @@
 	// 创建一个fetcher实例
 	const fetcher = new Fetcher();
 
-	// 给让wq默认等于all方法
+	// 让weexRequest默认等于all方法
 	const weexRequest = fetcher.all.bind(fetcher);
 
-	// 给wq上绑定便捷方法
+	// 给weexRequest添加getter，并代理对便捷应方法到weexRequest
 	for (const key in fetcher) {
 		Object.defineProperty(weexRequest, key, {
 			configurable: true,

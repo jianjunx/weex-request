@@ -2,7 +2,7 @@ const stream = weex.requireModule('stream');
 /**
  * Fetcher类
  * Weex-request 是封装weex中的stream.fetch模块，实现了便捷方法和拦截请求，可以像axios一样使用。
- * 文档地址: https://github.com/Jefxie/weex-request
+ * 仓库地址: https://github.com/Jefxie/weex-request
  */
 class Fetcher {
 	constructor() {
